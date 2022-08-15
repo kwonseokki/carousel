@@ -41,8 +41,8 @@ function App() {
 ```
 
 ### props
-|props|type|default|description|
-|:------:|:----:|:----:|:----:|
-| images | array | [] | 배열에 사용하실 이미지를 넣어주세요.|
-| buttonSize | string | medium |인디케이터 사이즈 입니다(small, medium,large) |
-| duration | number | 2000(2s) | 자동슬라이드 시간간격 |
+|props|essential|type|default|description|
+|:------:|:----:|:----:|:----:|:----:|
+| images |   ✔   | array | [] | 배열에 사용하실 이미지를 넣어주세요.|
+| buttonSize |  | string | medium |인디케이터 사이즈 입니다(small, medium,large) |
+| duration |  | number | 2000(2s) | 자동슬라이드 시간간격 |
