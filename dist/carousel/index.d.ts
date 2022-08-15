@@ -1,5 +1,5 @@
 import React from "react";
-import "./slide.css";
+import './slide.scss';
 declare type SlideProps = {
     images: string[];
     duration: number;
@@ -8,6 +8,7 @@ declare type SlideProps = {
 declare const _default: React.MemoExoticComponent<{
     ({ images, duration, buttonSize }: SlideProps): JSX.Element;
     defaultProps: {
+        images: null;
         duration: number;
         buttonSize: string;
     };

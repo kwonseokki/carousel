@@ -1,7 +1,7 @@
 import { jsx as _jsx, jsxs as _jsxs } from "react/jsx-runtime";
 import React, { useEffect, useRef, useState } from "react";
-import "./slide.css";
 import { FcNext, FcPrevious } from 'react-icons/fc';
+import './slide.css';
 const Slide = ({ images, duration, buttonSize }) => {
     const boxRef = useRef(null);
     const itemRef = useRef(null);
@@ -53,13 +53,13 @@ const Slide = ({ images, duration, buttonSize }) => {
             setIndex(action.select + 1);
         }
     };
-    return (_jsxs("div", Object.assign({ className: "slide-container", ref: boxRef }, { children: [_jsx("ul", Object.assign({ className: "slide-indicator " }, { children: images.map((value, idx) => (_jsx("li", { className: [
+    return (_jsxs("div", Object.assign({ className: "slide-container", ref: boxRef }, { children: [_jsx("ul", Object.assign({ className: "slide-indicator " }, { children: images ? images.map((value, idx) => (_jsx("li", { className: [
                         "slide-indicator-btn",
                         idx + 1 === index && "active",
                         buttonSize
                     ].join(" "), onClick: () => {
                         moveSlide({ type: "select", select: idx });
-                    } }))) })), _jsx("button", Object.assign({ className: "slide-next-btn", onClick: () => {
+                    } }))) : _jsx("h5", { children: "\uC774\uBBF8\uC9C0\uB97C \uB123\uC5B4\uC8FC\uC138\uC694(please insert an image)" }) })), _jsx("button", Object.assign({ className: "slide-next-btn", onClick: () => {
                     moveSlide({ type: "next" });
                 } }, { children: _jsx(FcNext, { size: "20" }) })), _jsx("button", Object.assign({ className: "slide-prev-btn", onClick: () => {
                     moveSlide({ type: "prev" });
@@ -73,6 +73,7 @@ const Slide = ({ images, duration, buttonSize }) => {
                     } }, idx))) }))] })));
 };
 Slide.defaultProps = {
+    images: null,
     duration: 2000,
     buttonSize: "medium"
 };
