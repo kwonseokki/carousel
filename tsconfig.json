@@ -21,10 +21,12 @@
     "moduleResolution": "node",
     "resolveJsonModule": true,
     "isolatedModules": true,
-    "noEmit": true
+    "noEmit": false, // 컴포넌트 출력여부
+    "declaration": true, // .d.ts 파일생성 옵션 타입스크립트 지원위해 true
+    "outDir": "./dist"
   },
   "include": [
-    "./src/"
+    "./src/lib/**/*.tsx", "./src/lib/**/*.ts", "./src/lib/**/*.css", 
   ],
   "exclude": [
     "node_modules/*"
